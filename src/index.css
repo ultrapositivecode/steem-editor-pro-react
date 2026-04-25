@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --bg-main: #020617; /* slate-950 */
+  --bg-sidebar: #0f172a; /* slate-900 */
+  --bg-card: #1e293b; /* slate-800 */
+  --text-main: #f1f5f9; /* slate-100 */
+  --text-muted: #94a3b8; /* slate-400 */
+  --border-color: #1e293b; /* slate-800 */
+}
+
+.theme-light {
+  --bg-main: #ffffff;
+  --bg-sidebar: #f8fafc; /* slate-50 */
+  --bg-card: #f1f5f9; /* slate-100 */
+  --text-main: #0f172a; /* slate-900 */
+  --text-muted: #475569; /* slate-600 */
+  --border-color: #e2e8f0; /* slate-200 */
+}
+
+/* Light Theme Overrides for hardcoded slate utilities */
+.theme-light .bg-slate-950 { background-color: var(--bg-main) !important; }
+.theme-light .bg-slate-950\/50 { background-color: rgba(255, 255, 255, 0.5) !important; }
+.theme-light .bg-slate-950\/80 { background-color: rgba(255, 255, 255, 0.8) !important; }
+
+/* bg-slate opacity combinations */
+.theme-light .bg-slate-900\/30 { background-color: rgba(248, 250, 252, 0.3) !important; }
+.theme-light .bg-slate-900\/60 { background-color: rgba(248, 250, 252, 0.6) !important; }
+
+.theme-light .bg-slate-800\/20 { background-color: rgba(241, 245, 249, 0.2) !important; }
+.theme-light .bg-slate-800\/80 { background-color: rgba(241, 245, 249, 0.8) !important; }
+.theme-light .bg-slate-800\/90 { background-color: rgba(241, 245, 249, 0.9) !important; }
+.theme-light .bg-slate-800\/95 { background-color: rgba(241, 245, 249, 0.95) !important; }
+
+.theme-light .bg-slate-500\/10 { background-color: rgba(203, 213, 225, 0.2) !important; }
+
+.theme-light .border-slate-800\/50 { border-color: rgba(226, 232, 240, 0.8) !important; }
+.theme-light .border-slate-700\/50 { border-color: rgba(203, 213, 225, 0.8) !important; }
+.theme-light .border-slate-700\/30 { border-color: rgba(203, 213, 225, 0.5) !important; }
+.theme-light .border-slate-600\/50 { border-color: rgba(148, 163, 184, 0.5) !important; }
+
+.theme-light .border-white\/10 { border-color: #e2e8f0 !important; }
+.theme-light .border-white\/20 { border-color: #cbd5e1 !important; }
+.theme-light .border-white\/30 { border-color: #94a3b8 !important; }
+
+.theme-light .group:hover \.group-hover\:text-slate-400 { color: var(--text-muted) !important; }
+
+/* Checkbox and active states fixes */
+.theme-light .peer:checked ~ \.peer-checked\:bg-cyan-500,
+.theme-light .peer:checked ~ \.peer-checked\:bg-cyan-600 {
+  background-color: var(--accent, #06b6d4) !important;
+}
+
+.theme-light .peer:checked ~ \.peer-checked\:border-cyan-400,
+.theme-light .peer:checked ~ \.peer-checked\:border-cyan-500 {
+  border-color: var(--accent, #06b6d4) !important;
+}
+
+.theme-light .bg-slate-900 { background-color: var(--bg-sidebar) !important; }
+.theme-light .bg-slate-900\/50 { background-color: rgba(248, 250, 252, 0.5) !important; }
+.theme-light .bg-slate-900\/80 { background-color: rgba(248, 250, 252, 0.8) !important; }
+.theme-light .bg-slate-800 { background-color: var(--bg-card) !important; }
+.theme-light .bg-slate-800\/50 { background-color: rgba(241, 245, 249, 0.5) !important; }
+.theme-light .bg-slate-800\/40 { background-color: rgba(241, 245, 249, 0.4) !important; }
+.theme-light .bg-slate-800\/30 { background-color: rgba(241, 245, 249, 0.3) !important; }
+.theme-light .bg-slate-800\/10 { background-color: rgba(241, 245, 249, 0.1) !important; }
+.theme-light .bg-slate-700 { background-color: #e2e8f0 !important; }
+.theme-light .bg-slate-700\/50 { background-color: rgba(226, 232, 240, 0.5) !important; }
+
+.theme-light .border-slate-800 { border-color: var(--border-color) !important; }
+.theme-light .border-slate-700 { border-color: #cbd5e1 !important; }
+
+.theme-light .text-slate-50 { color: #020617 !important; }
+.theme-light .text-slate-100 { color: #0f172a !important; }
+.theme-light .text-slate-200 { color: #020617 !important; }
+.theme-light .text-slate-300 { color: #0f172a !important; }
+.theme-light .text-slate-400 { color: var(--text-muted) !important; }
+.theme-light .text-slate-500 { color: #64748b !important; }
+.theme-light .text-slate-600 { color: #94a3b8 !important; }
+
+/* In light theme, "white" text should generally be dark (for cards, labels, etc.) */
+.theme-light .text-white { color: #020617 !important; }
+
+/* ... EXCEPT when specifically inside primary colored elements like buttons */
+.theme-light .bg-cyan-500.text-white,
+.theme-light .bg-cyan-600.text-white,
+.theme-light .bg-yellow-500.text-white,
+.theme-light .bg-yellow-600.text-white,
+.theme-light .bg-green-500.text-white,
+.theme-light .bg-green-600.text-white,
+.theme-light .bg-red-500.text-white,
+.theme-light .bg-red-600.text-white,
+.theme-light .bg-blue-500.text-white,
+.theme-light .bg-blue-600.text-white {
+  color: #ffffff !important;
+}
+
+.theme-light .hover\:bg-slate-700:hover { background-color: #cbd5e1 !important; }
+.theme-light .hover\:bg-slate-800:hover { background-color: #e2e8f0 !important; }
+.theme-light .hover\:bg-slate-900:hover { background-color: #f1f5f9 !important; }
+
+.theme-light .hover\:text-slate-200:hover { color: #0f172a !important; }
+.theme-light .hover\:text-white:hover { color: #020617 !important; }
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  @apply antialiased overflow-hidden transition-colors duration-300;
+  font-family: var(--font-sans);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors;
+}
+
+.theme-light .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #cbd5e1; }
+.theme-light .custom-scrollbar::-webkit-scrollbar-thumb:hover { background-color: #94a3b8; }
+
+/* Steem-specific styles */
+.pull-left { float: left; margin-right: 1.5rem; margin-bottom: 1rem; max-width: 50%; }
+.pull-right { float: right; margin-left: 1.5rem; margin-bottom: 1rem; max-width: 50%; }
+.text-justify { text-align: justify; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.clearfix::after { content: ""; clear: both; display: table; }
+.phishy { color: #ef4444 !important; }
+.text-blue { color: #3b82f6 !important; }
+.text-green { color: #22c55e !important; }
+
+/* Markdown body styles */
+.markdown-body {
+  @apply leading-relaxed text-slate-300;
+}
+
+.markdown-body h1 { @apply text-2xl font-bold text-slate-100 mb-6 mt-8 border-b border-slate-800 pb-2; }
+.markdown-body h2 { @apply text-xl font-bold text-slate-100 mb-5 mt-7; }
+.markdown-body h3 { @apply text-lg font-bold text-slate-100 mb-4 mt-6; }
+.markdown-body p { @apply mb-5 leading-relaxed; }
+.markdown-body ul { @apply list-disc pl-6 mb-4; }
+.markdown-body ol { @apply list-decimal pl-6 mb-4; }
+.markdown-body blockquote { @apply border-l-4 border-slate-700 pl-4 italic text-slate-400 mb-4; }
+.markdown-body code { @apply bg-slate-800 px-1.5 py-0.5 rounded text-sm font-mono text-cyan-400; }
+.markdown-body pre { @apply bg-slate-900 p-4 rounded-xl mb-4 overflow-x-auto border border-slate-800; }
+.markdown-body pre code { @apply bg-transparent p-0 text-slate-300; }
+.markdown-body table { @apply w-full border-collapse mb-4; }
+.markdown-body th, .markdown-body td { @apply border border-slate-800 p-2 text-left; }
+.markdown-body th { @apply bg-slate-900 font-bold; }
+.markdown-body img { @apply rounded-xl max-w-full h-auto object-contain; max-height: 500px; }
+.markdown-body hr { @apply border-slate-800 my-8; }
+.markdown-body a { @apply text-cyan-400 hover:underline; }
+
+/* Light Theme Markdown Overrides */
+.theme-light .markdown-body { color: var(--text-main); }
+.theme-light .markdown-body h1,
+.theme-light .markdown-body h2,
+.theme-light .markdown-body h3 { color: #0f172a; border-color: #cbd5e1; }
+.theme-light .markdown-body blockquote { border-color: #cbd5e1; color: var(--text-muted); }
+.theme-light .markdown-body code { background-color: #e2e8f0; color: var(--accent); }
+.theme-light .markdown-body pre { background-color: #f1f5f9; border-color: #cbd5e1; }
+.theme-light .markdown-body pre code { background-color: transparent; color: #0f172a; }
+.theme-light .markdown-body hr { border-color: #cbd5e1; }
+.theme-light .markdown-body th, 
+.theme-light .markdown-body td { border-color: #cbd5e1; }
+.theme-light .markdown-body th { background-color: #f8fafc; color: #0f172a; }

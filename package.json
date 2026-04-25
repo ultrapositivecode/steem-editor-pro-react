@@ -1,0 +1,59 @@
+{
+  "name": "steem-editor-pro",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^1.29.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@vitejs/plugin-legacy": "^6.0.7",
+    "buffer": "^6.0.3",
+    "bytebuffer": "^5.0.1",
+    "clsx": "^2.1.1",
+    "dompurify": "^3.4.1",
+    "dsteem": "^0.11.3",
+    "exif-js": "^2.3.0",
+    "exifreader": "^4.38.1",
+    "file-saver": "^2.0.5",
+    "idb-keyval": "^6.2.2",
+    "jszip": "^3.10.1",
+    "long": "^5.3.2",
+    "lucide-react": "^0.474.0",
+    "marked": "^18.0.2",
+    "motion": "^12.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/dompurify": "^3.0.5",
+    "@types/exif-js": "^2.3.1",
+    "@types/file-saver": "^2.0.7",
+    "@types/marked": "^5.0.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.58.1",
+    "vite": "^6.0.7"
+  }
+}
